@@ -17,8 +17,8 @@ public class JwtTokenProvider {
     private final Key key;
     private final long expirationMs;
 
-    public JwtTokenProvider(@Value("$spring.security.jwt.secret") String secret,
-                            @Value("spring.security.jwt.expiration-ms") long ms) {
+    public JwtTokenProvider(@Value("${spring.security.jwt.secret}") String secret,
+                            @Value("${spring.security.jwt.expiration-ms}") long ms) {
         // .getBytes concerts to byte array then takes byte array and creates a secret
         // key(cryptographic key) used to sign JWTs tokens
         // creates the signiture part of the JWT
