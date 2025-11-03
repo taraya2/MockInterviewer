@@ -2,13 +2,17 @@ package mock.interviewer.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(name = "users")
 public class User {
 
@@ -26,6 +30,9 @@ public class User {
     private String passwordHash;
 
     @Column(nullable = false)
-    private String Role;       // User / Admin
+    private LocalDateTime createdAt;
+
+    @Column(nullable = false)
+    private String role;       // User / Admin
 
 }

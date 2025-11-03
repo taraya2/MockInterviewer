@@ -9,7 +9,8 @@ import lombok.Data;
 public class UserLoginResponse {
     // returns this once logged in
 
-    private String token; // used later for refesh token
+    private TokenDTO accessToken;
+    private RefreshTokenDTO refreshToken;
     private String username;
     private String email;
 }
